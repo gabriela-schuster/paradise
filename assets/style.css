@@ -1,0 +1,80 @@
+html {
+	--pink: #e593b7;
+	--blue: #64CACC;
+	--blue2: #865ba4;
+	--white: #F5F7F7;
+	--beige: #E2E3C5;
+	--text: #b1adbc;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-color: var(--white);
+	color: var(--text);
+	font-family: 'Indie Flower', cursive;
+}
+h1, h2, h3 {
+	font-family: 'Lato', sans-serif;
+	letter-spacing: 2px;
+}
+h1 {
+	font-size: 7rem;
+	line-height: 4.6rem;
+	letter-spacing: 10px;
+}
+h2 {
+	font-size: 4rem;
+	line-height: 3.4rem;
+}
+h3 {
+	font-size: 2rem;
+	line-height: 2.6rem;
+}
+p {
+	font-size: 1.3rem;
+	line-height: 1.6rem;
+}
+
+.margin {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+::selection {
+	background-color: var(--pink);
+	color: var(--white);
+}
+
+header {
+	height: 100vh;
+	padding: 3vh;
+}
+.hero-bg {
+	height: 94vh;
+	background-image: url(img/hero.jpg);
+	background-position: center;
+	background-size: cover;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.hero-text {
+	width: 95%;
+	height: 95%;
+
+	background-color: var(--white);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+
+	mix-blend-mode: hard-light;
+	/* screen */
+}
+.hero-text h1 {
+	color: var(--text);
+	margin: 1rem 0;
+}
