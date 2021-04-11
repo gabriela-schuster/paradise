@@ -1,10 +1,9 @@
 html {
-	--pink: #e593b7;
-	--blue: #64CACC;
-	--blue2: #865ba4;
+	--pink: #c38baf;
+	--blue: #595b7f;
 	--white: #F5F7F7;
+	--text: #a19dac;
 	--beige: #E2E3C5;
-	--text: #b1adbc;
 }
 * {
 	margin: 0;
@@ -15,7 +14,7 @@ body {
 	color: var(--text);
 	font-family: 'Indie Flower', cursive;
 }
-h1, h2, h3 {
+h1, h2, h3, h4 {
 	font-family: 'Lato', sans-serif;
 	letter-spacing: 2px;
 }
@@ -32,11 +31,17 @@ h3 {
 	font-size: 2rem;
 	line-height: 2.6rem;
 }
-p {
-	font-size: 1.3rem;
+h4 {
+	font-size: 1rem;
 	line-height: 1.6rem;
 }
-
+p {
+	font-size: 1.2rem;
+	line-height: 1.9rem;
+}
+ul {
+	list-style-type: none;
+}
 .margin {
 	max-width: 1200px;
 	margin: 0 auto;
@@ -77,4 +82,179 @@ header {
 .hero-text h1 {
 	color: var(--text);
 	margin: 1rem 0;
+}
+
+.about {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+}
+.left {
+	height: 120%;
+	position: relative;
+	bottom: 30%;
+	padding: 4rem;
+	box-sizing: border-box;
+
+	color: var(--white);
+	background: rgb(229,147,183);
+	background: linear-gradient(150deg, var(--blue) 33%, var(--pink) 100%);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.left h2 {
+	text-shadow: 0 7px 7px 10px var(--text);
+}
+.left hr {
+	width: 30%;
+	background-color: var(--text);
+	padding: 1px;
+	border-radius: 5px;
+	border: 0;
+}
+.right {
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	justify-content: center;
+	align-items: center;
+}
+.right h3 {
+	color: var(--pink);
+	writing-mode: vertical-rl;
+	writing-mode: sideways-lr;
+}
+.right li {
+	margin: 2rem 0;
+}
+
+.shop {
+	padding: 5rem 0;
+}
+.shop h2 {
+	padding: 1rem;
+	box-sizing: border-box;
+	width: calc(50% - 1.5rem); /* .about grid gap */
+	background-color: var(--pink);
+	color: var(--white);
+}
+.shop-content {
+	margin-top: 3rem;
+
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+}
+.shop nav button {
+	width: 90%;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+
+	transition: all .7s;
+
+	background: linear-gradient(150deg, var(--blue), var(--pink));
+    background-size: 150% 150%;
+	color: var(--white);
+	cursor: pointer;
+	border: 1px solid var(--text);
+}
+.shop nav button:hover {
+	animation: gradient .7s forwards;
+}
+.shop nav button:focus {
+	background: var(--pink);
+}
+.shop-visualizer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 3rem;
+}
+.shop-img-wrapper {
+	transition: all .3s;
+}
+.shop-visualizer img {
+	width: 100%;
+}
+
+@keyframes gradient {
+	0%{background-position:0% 50%}
+	100%{background-position:100% 50%}
+}
+
+@media(max-width: 800px) {
+	h1 {
+		font-size: 4rem;
+	}
+	h2 {
+		font-size: 3rem;
+	}
+	h3 {
+		font-size: 2rem;
+	}
+	h4, p {
+		font-size: 1rem;
+	}
+
+	.about {
+		grid-template-columns: 1fr;
+	}
+	.right {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr 1fr;
+		text-align: center;
+	}
+	.right h3 {
+		writing-mode: horizontal-tb;
+	}
+	.right li {
+		margin: 1rem 0;
+	}
+
+	.shop {
+		padding: 5rem 1rem;
+	}
+	.shop h2 {
+		width: 80%;
+	}
+	.shop-content {
+		grid-template-columns: 1fr;
+	}
+	.shop nav button {
+		width: 50%;
+	}
+	.shop-visualizer {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+@media(max-width: 470px) {
+	html {
+		font-size: 90%;
+	}
+	h1 {
+		font-size: 2.7rem;
+		line-height: 4.3rem;
+	}
+	h2 {
+		font-size: 2rem;
+		line-height: 3rem;
+	}
+	h3 {
+		font-size: 1.5rem;
+		line-height: 2.4rem;
+	}
+
+	.left {
+		padding: 2rem 1rem;
+	}
+
+	.shop h2 {
+		width: 90%;
+	}
+	.shop nav button {
+		width: 50%;
+		display: block;
+	}
+	.shop-visualizer {
+		grid-template-columns: 1fr;
+	}
 }
